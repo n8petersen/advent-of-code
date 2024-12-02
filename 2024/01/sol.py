@@ -7,6 +7,11 @@ def parser(in_file):
     
     for line in in_file:
         print(line)
+        nums = line.strip().split()
+        left.append(int(nums[0]))
+        right.append(int(nums[1]))
+    
+    return left, right
 
 # main
 if __name__ == '__main__':
@@ -15,4 +20,5 @@ if __name__ == '__main__':
     
     with open(dir + "\\" + input, "r") as in_file:
         left, right = parser(in_file)
-        
+        print(left)
+        print(right)
