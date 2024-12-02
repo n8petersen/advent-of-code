@@ -6,7 +6,7 @@ def parser(in_file):
     right = []
     
     for line in in_file:
-        print(line)
+        # print(line)
         nums = line.strip().split()
         left.append(int(nums[0]))
         right.append(int(nums[1]))
