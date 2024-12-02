@@ -42,7 +42,7 @@ Your actual left and right lists contain many location IDs. What is the **total 
 
 To begin, get your [puzzle input](./input).
 
-Solution: 2031679
+Solution: `2031679`
 
 
 ### Part 2
@@ -74,3 +74,5 @@ The last number, 3, appears in the right list three times; the similarity score 
 So, for these example lists, the similarity score at the end of this process is **31** (9 + 4 + 0 + 0 + 9 + 9).
 
 Once again consider your left and right lists. **What is their similarity score?**
+
+Solution: `19678534`

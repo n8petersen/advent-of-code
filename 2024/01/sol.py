@@ -1,5 +1,4 @@
 import os
-import copy
 
 # Part 1
 def parser(in_file):
@@ -15,6 +14,8 @@ def parser(in_file):
     return left, right
 
 def getDistances(left, right):
+    left.sort()
+    right.sort()
     distances = []
 
     for i in range(len(left)):
@@ -23,22 +24,31 @@ def getDistances(left, right):
     
     return sum(distances)
 
+# Part 2
+def getSimilarity(num, right):
+    count = 0
+    for r in right:
+        if r == num:
+            count += 1
+    return num * count
+
 
 # main
 if __name__ == '__main__':
     dir = os.path.dirname(os.path.realpath(__file__))
-    input = "input_ex"
-    # input = "input"
+    # input = "input_ex"
+    input = "input"
     
     with open(dir + "\\" + input, "r") as in_file:
         left, right = parser(in_file)
 
-        left_sorted = copy.deepcopy(left)
-        right_sorted = copy.deepcopy(right)
-        left_sorted.sort()
-        right_sorted.sort()
-
-        distance = getDistances(left_sorted, right_sorted)
+        distance = getDistances(left, right)
         print("Total Distance: " + str(distance))
 
-        # print("Done!")
+        similarity_score = 0
+        for i in range(len(left)):
+            sim = getSimilarity(left[i], right)
+            similarity_score += sim
+        print("Similarity Score: " + str(similarity_score))
+
+
