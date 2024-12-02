@@ -27,7 +27,8 @@ def getDistances(left, right):
 # main
 if __name__ == '__main__':
     dir = os.path.dirname(os.path.realpath(__file__))
-    input = "input"
+    input = "input_ex"
+    # input = "input"
     
     with open(dir + "\\" + input, "r") as in_file:
         left, right = parser(in_file)
@@ -40,4 +41,4 @@ if __name__ == '__main__':
         distance = getDistances(left_sorted, right_sorted)
         print("Total Distance: " + str(distance))
 
-        print("Done!")
+        # print("Done!")
