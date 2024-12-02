@@ -12,7 +12,7 @@ def parser(in_file):
     return reports
 
 def checkSafe(report):
-    print(report)
+    # print(report)
     ## Check if increasing
     increasing = True
     for i in range(len(report)-1):
@@ -33,6 +33,22 @@ def checkSafe(report):
     return True
 
 
+def checkSafeTolerant(report):
+    # if first report is safe, 2nd is safe too
+    if checkSafe(report):
+        return True
+    
+    # Try removing each number one at a time
+    for i in range(len(report)):
+        # Create new report without number at index i
+        modified_report = report[:i] + report[i+1:]
+        if checkSafe(modified_report):
+            return True
+    
+    return False
+
+
+
 # main
 if __name__ == '__main__':
     dir = os.path.dirname(os.path.realpath(__file__))
@@ -47,5 +63,12 @@ if __name__ == '__main__':
         if (checkSafe(report)):
             safeReports += 1
     print("Safe Reports: " + str(safeReports))
+
+
+    tolerantSafeReports = 0
+    for report in reports:
+        if (checkSafeTolerant(report)):
+            tolerantSafeReports += 1
+    print("Tolerant Safe Reports: " + str(tolerantSafeReports))
 
 
