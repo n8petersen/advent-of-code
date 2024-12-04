@@ -16,3 +16,5 @@ For example, consider the following section of corrupted memory:
 Only the four highlighted sections are real `mul` instructions. Adding up the result of each instruction produces `161` `(2*4 + 5*5 + 11*8 + 8*5)`.
 
 Scan the corrupted memory for uncorrupted mul instructions. **What do you get if you add up all of the results of the multiplications?**
+
+Solution: `174960292`
